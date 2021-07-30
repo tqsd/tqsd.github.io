@@ -1,0 +1,64 @@
+/*basic-style und darstellung der 1. ebene*/
+nav {
+        float: left;
+        font: bold 16px arial, sans-serif;
+        border: 1px solid #121314;
+        border-top: 1px solid #2b2e30;
+        overflow: hidden;
+}
+nav ul {
+        margin:0;
+        padding:0;
+        list-style:none;
+}
+nav ul li {
+        float:left;
+}
+nav ul li a {
+        float: left;
+        color:#fff;
+        padding: 10px 20px;
+        text-decoration:none;
+        background:#555;
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(0,0,0,0.2);
+}
+nav li ul {
+        background:#555;
+        left: -999em;
+        margin: 40px 0 0;
+        position: absolute;
+        width: 160px;
+        z-index: 9999;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+}
+nav li ul a {
+        background: none;
+        border: 0 none;
+        margin-right: 0;
+        width: 120px;
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+}
+/*2. ebene anzeigen und stylen*/
+nav ul li a:hover,
+nav ul li:hover > a {
+        background:#333;
+}
+nav li ul a:hover, 
+nav ul li li:hover > a  {
+        background: #333;
+        border-bottom: 1px solid rgba(0,0,0,0.6);
+        border-top: 1px solid #000;
+}
+/*3. ebene anzeigen und stylen*/
+nav li:hover ul {
+        left: auto;
+}
+nav li li ul {
+        margin: -1px 0 0 160px;
+        visibility:hidden;
+}
+nav li li:hover ul {
+        visibility:visible;
+}
